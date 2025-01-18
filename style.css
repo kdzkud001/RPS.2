@@ -1,10 +1,23 @@
 #result {
     height:  100px;
-    width: 100px;
+    width: 150px;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    font-size: 30px;
     
 };
 
 #timer {
     font-size: 20px;
     color: red;
+}
+
+
+#life{
+    padding-bottom: 10px;
+}
+
+#lifeC{
+    padding-top: 10px;
 }
