@@ -73,6 +73,7 @@ function playRound(humanChoice, computerChoice){
     } else {
         outcome = "lose";
     }
+    
     result.textContent = outcome;
     return outcome;
 }
@@ -122,6 +123,7 @@ function stage0Handler(event) {
 }
 
 function stage1Handler(event) {
+
     const choice = event.target.id;
     buttons[choice].style.backgroundColor = "";
     buttonPresses[choice] *= -1;
@@ -145,15 +147,21 @@ function stage1Handler(event) {
         
         
     }
+
     if (sum == -3) {
         console.log("checking");
-
-
         reset();
-        stage = 0;
-        handleStage(); // Re-evaluate the stage
+        if (lifeC.childElementCount === 0) {
+            result.textContent = "GAME OVER YOU WIN";
+        }
+        else if (life.childElementCount === 0) {
+            result.textContent = "GAME OVER YOU LOSE";
+        }
         
+        stage = 0;
+        handleStage();
     }
+    
 }
 
 // Initial call to handle the stage
@@ -161,14 +169,7 @@ handleStage();
 
 function reset(){
 
-    if (!life.hasChildNodes()) {
-        result.textContent = "GAME OVER YOU LOSE";
-        return;
-    } 
-    else if (!lifeC.hasChildNodes()) {
-        result.textContent = "GAME OVER YOU WIN";
-        return;
-    }
+
     
     computerChoices = ['rock', 'paper', 'scissors'];
     Object.keys(computerButtons).forEach(choice => {
