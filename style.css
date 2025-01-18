@@ -21,3 +21,12 @@
 #lifeC{
     padding-top: 10px;
 }
+ #userButtons button{
+    color:rgb(247, 255, 2);
+    background-color: blueviolet;
+ }
+
+ #computer button{
+    color:rgb(0, 0, 0);
+    background-color: rgba(137, 43, 226, 0.495);
+ }
